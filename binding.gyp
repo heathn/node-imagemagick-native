@@ -38,14 +38,8 @@
             'OTHER_CFLAGS': [
               '<!@(Magick++-config --cflags)'
             ]
-          },
-          "libraries": [
-             '<!@(Magick++-config --ldflags --libs)',
-          ],
-          'cflags': [
-            '<!@(Magick++-config --cflags --cppflags)'
-          ],
-        }], ['OS=="linux"', { # not windows not mac
+          }
+        }], ['OS!="win"', { # not windows
           "libraries": [
             '<!@(Magick++-config --ldflags --libs)',
           ],
